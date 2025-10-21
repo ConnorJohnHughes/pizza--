@@ -8,6 +8,9 @@
     <link rel="Icon" href="images/pizza-king-favicon.jpg">
     <!-- Stylesheet -->
      <link rel="stylesheet" href="styles/pizza-styles.css">
+
+     <!--Link to JS file -->
+     <script src="js/pizza.js" defer></script>
 </head>
 <body>
     <main>
@@ -20,20 +23,29 @@
             <p >The land of pizza, where you and your family 
                 can eat and live like royalty while being served 
                 the best pizza in the kingdom!</p>
-            <a id="contact-button" href="#" role="button">Contact Us</a>
+            <a id="contact-button" href="/contact-us" role="button">Contact Us</a>
         </header>
-        <form id="pizza-form" action="#" method="get">
+        <form id="pizza-form" action="submit-order" method="post">
             <!-- Contact Info -->
             <fieldset >
                 <legend>Contact Info</legend>
                 <label for="Fname"  > First Name:</label>
                 <input type="text" id="Fname" name="Fname">
+                <span id="err-Fname" class="error" >Missing  First name</span>
+
 
                 <label for="Lname"  > Last Name:</label>
                 <input type="text" id="Lname" name="Lname">
 
+                <span id="err-Lname" class="error" >Missing  Last name</span>
+
+
                 <label for="Email"  > Email:</label>
                 <input type="email" id="Email" name="Email">   
+
+                <span id="err-Email" class="error" >Missing  Email</span>
+
+
             </fieldset>
             <fieldset>
                 <!-- Pickup or delivery -->
@@ -42,6 +54,9 @@
                     <input type="radio" id="pickup" name="method" value="pickup"> </label>
                 <label for="delivery"  > Delivery
                     <input type="radio" id="delivery" name="method" value="delivery"> </label>
+
+                <span id="err-Method" class="error" >Missing  Pickup or Delivery </span>
+
             </fieldset>
             <!-- Toppings -->
             <fieldset>
@@ -61,6 +76,7 @@
                 <label for="suausage" >
                     <input type="checkbox" id="suausage" name="toppings[]" value="suausage"> Suausage
                 </label>
+                
             </fieldset>
             <!-- Pizza slice -->
             <fieldset>
@@ -72,6 +88,8 @@
                     <option value="large">Large</option>
 
                 </select>
+                <span id="err-size" class="error" >Missing  a Size</span>
+
             </fieldset>
             <button type="submit" id="order" >Order now</button>
 
