@@ -23,9 +23,16 @@
             <p >The land of pizza, where you and your family 
                 can eat and live like royalty while being served 
                 the best pizza in the kingdom!</p>
-            <a id="contact-button" href="#" role="button">Contact Us</a>
+            <a id="contact-button" href="/"  role="button">Contact Us</a>
         </header>
-        <h1>Thank you for your order!</h1>
+        <h1>Thank you for your order, <%= order.Fname %> !</h1>
+        <h2>Order Summary</h2>
+        <p>Name: <%= order.Fname %> <%= order.Lname %> </p>
+        <p>Email: <%= order.Email %></p>
+        <p>Toppings: <%=order.toppings%>  </p>
+        <p>Size: <%= order.size %></p>
+        <p>Comment: <%= order.comment%> </p>
+        <p>Date/Time: <%= order.timeStamp.toLocaleString()  %></p>
     </main>
 </body>
 </html>
